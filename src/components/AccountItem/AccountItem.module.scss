@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 9px 16px;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}
+
+.avatar {
+    flex-shrink: 0;
+}
+
+.body {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    span {
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-right: 8px;
+        display: inline-block;
+
+    }
+}
+
+.name {
+    font-size: 1.4rem;
+    display: inline-flex;
+}

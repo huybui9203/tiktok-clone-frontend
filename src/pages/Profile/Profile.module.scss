@@ -1,0 +1,100 @@
+@use 'src/components/GlobalStyles/responsive.scss' as *;
+.wrapper {
+    padding: 32px 24px 36px;
+    flex: 1;
+}
+
+.profile {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.body {
+    margin-left: 28px;
+
+    .user-title {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+    .statistic,
+    .bio,
+    .user-actions {
+        margin-top: 10px;
+    }
+
+    .label {
+        strong {
+            color: var(--text-color);
+            margin-right: 6px;
+        }
+        color: #161823bf;
+        font-size: 1.6rem;
+        margin-right: 20px;
+    }
+}
+
+.account-not-found {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: calc(0px - var(--default-layout-header-height));
+
+    & > :nth-child(2) {
+        font-size: 2.4rem;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    & > :nth-child(3) {
+        font-size: 1.6rem;
+        color: rgba(22, 24, 35, 0.75);
+        margin-top: 4px;
+    }
+}
+
+.videos {
+
+}
+
+.tabs {
+}
+
+.list-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px 16px;
+    margin-top: 24px;
+
+    @include for-size(sm, down) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include between-sizes(sm, md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include for-size(lg, up) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    @include for-size(xl, up) {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    @include for-size(xxl, up) {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}

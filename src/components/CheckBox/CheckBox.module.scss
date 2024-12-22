@@ -1,0 +1,54 @@
+.wrapper {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    cursor: pointer;
+
+    .checkbox,
+    .active {
+        color: #d4d4d4;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .value {
+        font-size: 1.7rem;
+        margin-left: 8px;
+        font-weight: 500;
+    }
+
+    .input,
+    .active {
+        display: none;
+    }
+
+    .input:checked ~ .checkbox {
+        display: none;
+    }
+
+    .input:checked ~ .active {
+        display: flex;
+        color: var(--primary);
+    }
+}
+
+.group-wrapper {
+    .group-label {
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    &.horizontal {
+        .group-label {
+            margin-bottom: 2px;
+        }
+
+        .group {
+            display: flex;
+        }
+
+        .group > :nth-of-type(n + 2) {
+            margin-left: 24px;
+        }
+    }
+}

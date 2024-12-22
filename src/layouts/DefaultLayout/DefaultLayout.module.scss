@@ -1,0 +1,16 @@
+.container {
+  max-width: 100%;
+  display: flex;
+  margin-top: var(--default-layout-header-height);
+}
+
+.padding-left {
+  width: var(--width-sidebar);
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  min-height: calc(100vh - var(--default-layout-header-height));
+  display: flex;
+}

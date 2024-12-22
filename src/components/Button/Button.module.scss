@@ -1,0 +1,125 @@
+.wrapper,
+.md {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    min-width: 96px;
+    min-height: 36px;
+    font-size: 1.6rem;
+    padding: 6px 16px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    color: var(--text-color);
+    font-weight: 600;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+
+    &.disabled {
+        pointer-events: none;
+        color: rgba(22, 24, 35, 0.34);
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+
+    span + span {
+        margin-left: 8px;
+    }
+}
+
+.wrapper + .wrapper {
+    margin-left: 16px;
+}
+
+.primary,
+.secondary,
+.lg {
+    border-radius: 4px;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: #fff;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+    }
+}
+
+.secondary {
+    background-color: #0000000D;
+
+    &:hover {
+        background-color: rgb(224 224 224);
+    }
+}
+
+.outline {
+    border-color: rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.outlinePrimary {
+    border-color: var(--primary);
+    color: var(--primary);
+
+    &:hover {
+        background-color: #ffeef2;
+    }
+}
+
+.lg {
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 1.8rem;
+}
+
+.round {
+    border-radius: 999px;
+}
+
+//switch button
+.switch-mode {
+    min-width: 44px;
+    min-height: 24px;
+    border-radius: 999px;
+    position: relative;
+    border-width: 2px;
+}
+
+.switch-mode.light {
+    background: rgba(22, 24, 35, 0.12);
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    }
+}
+
+.switch-mode.dark {
+    background: rgb(11, 224, 155);
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+        border-radius: 50%;
+        left: calc(100% - 20px);
+        top: 0;
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    }
+}

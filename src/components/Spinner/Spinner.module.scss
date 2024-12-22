@@ -1,0 +1,53 @@
+.contaner {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 6px 0;
+}
+
+.wrapper {
+    display: inline-flex;
+    font-size: 1.2rem;
+    transition: opacity .8s;
+    color: rgb(167 167 171);
+    filter: brightness(.9);
+    filter: drop-shadow(rgba(12, 12, 12, 0.2) 2px 2px 5px);
+    animation: spinner 0.6s ease-in infinite;
+}
+
+@keyframes spinner {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+        transform: rotate(360deg);
+    }
+}
+
+
+//options
+.slow {
+    animation: spinner .8s linear infinite;
+}
+
+.slower {
+    animation: spinner 1.0s ease-in infinite;
+}
+
+.normal {
+    animation: spinner .6s ease-in infinite;
+}
+
+.fast {
+    animation: spinner .4s ease-in infinite;
+}
+
+.faster {
+    animation: spinner .2s ease-in infinite;
+}
+
+.hidden {
+    display: none;
+}

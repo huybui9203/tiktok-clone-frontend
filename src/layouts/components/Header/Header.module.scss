@@ -1,0 +1,67 @@
+.wrapper {
+    height: var(--default-layout-header-height);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 16px;
+}
+
+.logo {
+    height: 42px;
+    width: 300px;
+}
+
+.logo-link {
+    display: flex;
+}
+
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    margin-left: 18px;
+    font-size: 2rem;
+    width: 28px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user-avatar {
+    margin-left: 24px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+
+    .notify {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        transform: translateX(50%);
+        color: #fff;
+        min-width: 24px;
+        padding: 1px 6px;
+        font-weight: 600;
+        border-radius: 9999px;
+        background-color: var(--primary);
+    }
+}
+
+.action .action-btn:nth-child(2) {
+    margin-left: 32px;
+}

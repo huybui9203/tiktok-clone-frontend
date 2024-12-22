@@ -1,0 +1,166 @@
+@import 'normalize.css';
+
+:root {
+    --primary: #fe2c55;
+    --black: #161823;
+    --text-color: #161823;
+    --error-color: #ff4c3a;
+    --success-color: #0be09b;
+
+    --font-family: 'TikTokFont', sans-serif;
+    //default layout
+    --default-layout-header-height: 60px;
+    --width-sidebar: 248px;
+    --zoom-in: zoomIn;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-rendering: optimizespeed;
+}
+
+//Scrollbar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+//font embedded
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+
+//tippy
+
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        color: #fff;
+    }
+    .tippy-content {
+        padding: 8px;
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+
+    .tippy-box.tippy-no-arrow {
+        background: rgba(56, 56, 56, 0.95);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: #fff;
+
+        .tippy-content {
+            padding: 8px 12px;
+        }
+
+        .tippy-arrow {
+            display: none;
+        }
+    }
+}
+
+//mixin
+
+@mixin ellipseInLine($number) {
+    // word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $number;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+//draft editor custom
+body {
+    .public-DraftEditorPlaceholder-root {  //change color of Draft Editor's placeholder
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    .public-DraftStyleDefault-block {
+        margin: 0;
+    }
+
+    // .public-DraftEditorPlaceholder-hasFocus {
+    //     color: red;
+    // }
+}
+
+//animation
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

@@ -1,0 +1,299 @@
+.wrapper {
+    background-color: #f8f8f8;
+    padding: 16px 6px 240px;
+}
+.status {
+    padding: 24px 24px 0;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+
+    .info {
+        margin-bottom: 12px;
+
+        .info-title {
+            font-size: 2.4rem;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .info-detail {
+            margin-bottom: 12px;
+        }
+
+        .info-item:first-of-type {
+            margin-right: 12px;
+        }
+
+        .info-label {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.65);
+        }
+
+        .info-value {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .info-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .progress-detail {
+            color: #000000a6;
+        }
+
+        .progress-detail.complete {
+            color: var(--success-color);
+        }
+
+        .progress-loaded {
+            margin-left: 8px;
+            margin-right: 6px;
+        }
+
+        .progress-timeLeft {
+            margin: 0 6px 0 6px;
+        }
+
+        .progress-loaded,
+        .progress-timeLeft,
+        .progress-num {
+            font-feature-settings: 'tnum';
+        }
+
+        .icon-success {
+            margin-right: 8px;
+        }
+
+        .progress-num {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 3px;
+        background-color: #0075db;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width .3s ease-out;
+
+        &.progress-bar-fill {
+            background-color: var(--success-color);
+        }
+    }
+
+    .button-replace,
+    .button-cancel {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        min-height: 35px;
+    }
+}
+
+.form {
+    padding: 24px 24px 0;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 10px;
+    position: relative;
+
+    .caption {
+        .caption-editor-wrapper {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            width: 682px;
+            padding: 16px 0;
+            line-height: 2rem;
+        }
+
+        .caption-editor {
+            height: 63px;
+            max-height: 63px;
+            overflow-y: auto;
+        }
+
+        .caption-editor,
+        .word-count {
+            padding: 0 16px;
+        }
+
+        .draft-editor [class*='public-DraftEditorPlaceholder-root'],
+        .word-count {
+            //change color of Draft Editor's placeholder
+            color: rgba(0, 0, 0, 0.34);
+        }
+
+        .editor-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .word-count {
+            font-size: 1.3rem;
+            font-feature-settings: 'tnum';
+        }
+    }
+
+    .cover-wrapper {
+        position: relative;
+        width: fit-content;
+
+        .cover {
+            max-width: 250px;
+            max-height: 250px;
+        }
+
+        .edit-cover-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-color: rgba(51, 51, 51, 0.6);
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+
+    .video-container {
+        width: 320px;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+
+        .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .video {
+            max-width: 320px;
+            max-height: 400px;
+        }
+    }
+
+    .cover,
+    .video {
+        border-radius: 8px;
+        display: flex;
+    }
+
+    .video-visibility {
+        max-width: 340px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+
+    .form-footer {
+        display: flex;
+        padding: 24px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}
+
+//confirm
+.confirm {
+    width: 540px;
+    max-width: 540px !important;
+    text-align: left;
+    .confirm-msg {
+        font-size: 1.8rem;
+        padding: 24px 24px 0;
+    }
+
+    .confirm-description {
+        margin-top: 4px;
+    }
+
+    .confirm-btns {
+        justify-content: end;
+        margin-bottom: 24px;
+    }
+
+}
+
+// edit cover
+.edit-cover {
+    width: 940px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+
+    .edit-cover-title {
+        width: 100%;
+        padding: 20px 0;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .edit-cover-title,
+    .edit-cover-footer {
+        background-color: #fff;
+    }
+
+    .cover-preview {
+        max-width: 400px;
+        max-height: 350px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .cover-list-wrapper {
+        position: relative;
+
+        .cover-list {
+            cursor: grab;
+            border-radius: 4px;
+        }
+
+        .drag-item {
+            cursor: grab;
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 4px;
+            height: 72px;
+            border-radius: 4px;
+            background-color: rgb(32, 213, 236);
+        }
+    }
+
+    .edit-cover-footer {
+        width: 100%;
+        padding: 24px;
+        border-top: 1px solid rgba(22, 24, 35, 0.2);
+        text-align: right;
+        margin-top: 24px;
+    }
+}

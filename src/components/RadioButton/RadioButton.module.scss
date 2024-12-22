@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    cursor: pointer;
+
+    .radio {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgb(212 212 212);
+        border-radius: 50%;
+    }
+
+    .value {
+        font-size: 1.7rem;
+        margin-left: 8px;
+        font-weight: 500;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .input:checked ~ .radio {
+        border: 6px solid var(--primary);
+    }
+}
+
+.group-wrapper {
+    .group-label {
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    &.horizontal {
+        .group-label {
+            margin-bottom: 2px;
+        }
+
+        .group {
+            display: flex;
+        }
+
+        .group > :nth-of-type(n + 2) {
+            margin-left: 24px;
+        }
+    }
+}

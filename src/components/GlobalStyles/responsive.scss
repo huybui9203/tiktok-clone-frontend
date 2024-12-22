@@ -1,0 +1,52 @@
+@use 'src/components/GlobalStyles/_variables.scss' as *;
+@mixin for-size($breakpoint, $direction: down) {
+    //neu breakpoint ton tai
+    @if map-has-key($breakpoints, $breakpoint) {
+        //Kiểm tra breakpoint truyền vào có tồn tại như bạn đã định nghĩa hay không.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        // Xác định min-width hay max-width
+        @if $direction == up {
+            //Build media query
+            @media (min-width: $breakpoint-value) {
+                @content;
+            }
+        } @else if $direction == down {
+            //Build media query
+            @media (max-width: $breakpoint-value) {
+                @content;
+            }
+        }
+    } @else {
+        @if $direction == up {
+            //Build media query
+            @media (min-width: $breakpoint) {
+                @content;
+            }
+        } @else if $direction == down {
+            //Build media query
+            @media (max-width: $breakpoint) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin between-sizes($lower, $upper) {
+    //Kiểm tra breakpoint truyền vào có tồn tại như bạn đã định nghĩa hay không.
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+        // Lấy giá trị pixel breakpoint đó
+        $lower-breakpoint: map-get($breakpoints, $lower);
+        $upper-breakpoint: map-get($breakpoints, $upper);
+
+        //Build media query tự động
+        @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
+            @content;
+        }
+    } @else {
+        //Build media query tự động
+        @media (min-width: $lower) and (max-width: $upper) {
+            @content;
+        }
+    }
+}

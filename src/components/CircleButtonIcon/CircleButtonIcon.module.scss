@@ -1,0 +1,56 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+
+    strong {
+        font-size: 1.4rem;
+        font-family: var(--font-family);
+        color: rgba(22, 24, 35, 0.75);
+        font-weight: 700;
+        font-feature-settings: "tnum";
+    }
+}
+
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 50%;
+}
+
+.button.disabled > .icon-wrapper {
+    // opacity: 0.2;
+}
+
+
+//info placement
+.button.info-bottom {    
+    .icon-wrapper {
+        margin: 8px 0 6px 0;
+    }
+}
+
+.button.info-top {
+    flex-direction: column-reverse;
+    .icon-wrapper {
+        margin: 6px 0 8px 0;
+    }
+}
+
+.button.info-left {
+    flex-direction: row;
+    .icon-wrapper {
+        margin: 0 6px 0 0;
+    }
+}
+
+.button.info-right {
+    flex-direction: row-reverse;
+    .icon-wrapper {
+        margin: 0 0 0 6px;
+    }
+}

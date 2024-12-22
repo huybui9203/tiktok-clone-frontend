@@ -1,0 +1,370 @@
+@use 'src/components/GlobalStyles/GlobalStyles.scss';
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.wrapper.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.video-container {
+    flex: 1 0 600px;
+    max-width: 100%;
+    display: flex;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+
+    .bgblur-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        filter: blur(18px);
+        opacity: 0.3;
+    }
+
+    .video-loading {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .video-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .video-thumb,
+        .video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .video {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .controls-top {
+            display: flex;
+            justify-content: space-between;
+            height: 85px;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3) 0px, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+        }
+
+        .controls-switch {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+        }
+
+        .controls-bottom,
+        .controls-top,
+        .controls-switch {
+            transition: opacity .3s ease 0s;
+        }
+
+        &:hover .controls-bottom,
+        &:hover .controls-top,
+        &:hover .controls-switch {
+            opacity: 1;
+        }
+
+        .controls-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+
+            .control-btn {
+                font-size: 2rem;
+            }
+
+            button:has(.control-btn):last-of-type:hover + .volume-wrapper {
+                display: flex;
+            }
+
+            .progress {
+                margin: 0 16px;
+                flex: 1;
+            }
+
+            .time-video {
+                width: 88px;
+                font-size: 1.4rem;
+                text-align: end;
+                color: #fff;
+                margin-right: 16px;
+                font-feature-settings: "tnum";
+            }
+        }
+
+        .control-btn {
+            font-size: 2.4rem;
+            background-color: rgba(84, 84, 84, 0.5);
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                background-color: rgba(37, 37, 37, 0.6);
+                opacity: 0.7;
+            }
+        }
+
+        .volume-wrapper {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 96px;
+            height: 28px;
+            margin: 8px 6px;
+            background-color: rgba(84, 84, 84, 0.5);
+            border-radius: 32px;
+            position: relative;
+
+            &::before {
+                display: block;
+                width: 24px;
+                height: 28px;
+                background-color: transparent;
+                position: absolute;
+                top: 0px;
+                left: -8px;
+                content: '';
+            }
+
+            &:hover {
+                display: flex;
+            }
+
+            .volume {
+                width: 80px;
+            }
+        }
+
+        .volume-wrapper {
+            position: absolute;
+            bottom: calc(100% + 14px);
+            right: -14px;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.content {
+    flex: 0 0 544px;
+    display: flex;
+    flex-direction: column;
+    width: 544px;
+    background-color: #fff;
+    // position: relative;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+
+    .profile {
+        padding-top: 24px;
+        .description {
+            margin: 0 20px;
+            padding: 16px;
+            background-color: rgba(22, 24, 35, 0.03);
+            border-radius: 12px;
+        }
+
+        .info-author,
+        .link-author {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .info-author {
+            margin-bottom: 15px;
+
+            .link-author,
+            .avatar {
+                flex-shrink: 0;
+                margin-right: 12px;
+            }
+
+            .body {
+                line-height: 1.3;
+            }
+
+            .username,
+            .nickname {
+                display: flex;
+                align-items: baseline;
+            }
+
+            .username > span {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-right: 4px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            
+            }
+
+            .nickname {
+                font-size: 1.4rem;
+                
+                & > span:nth-child(2) {
+                    margin: 0 4px;
+                }
+
+                .time {
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .description-video {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+
+            @include GlobalStyles.ellipseInLine(2);
+
+            span:nth-of-type(1) {
+                height: 2.4rem;
+                float: right;
+                width: 0;
+            }
+        }
+
+        .btn-more {
+            float: right;
+            clear: both;
+        }
+
+        .btn-more,
+        .btn-less {
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .music-video {
+            font-size: 1.4rem;
+            display: block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            .music-icon {
+                font-size: 1.2rem;
+                margin-right: 8px;
+            }
+        }
+
+        .actions {
+            padding: 16px 32px 0;
+
+            .btn-group {
+                display: flex;
+            }
+
+            .link-wrapper {
+                display: flex;
+                align-items: center;
+                margin-top: 16px;
+                font-size: 1.4rem;
+                background-color: rgba(22, 24, 35, 0.06);
+                border: 1px solid rgba(22, 24, 35, 0.12);
+                overflow: hidden;
+                border-radius: 8px;
+
+                .link {
+                    padding-left: 12px;
+                    color: rgba(22, 24, 35, 0.75);
+                    cursor: text;
+                }
+
+                .btn-copy {
+                    font-weight: 700;
+                    white-space: nowrap;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &:hover {
+                        background-color: rgb(248 248 248);
+                    }
+                }
+            }
+        }
+    }
+
+    .tabs {
+        font-size: 1.4rem;
+        padding-top: 10px;
+        position: -webkit-sticky; //safari
+        position: sticky;
+        top: 0px;
+        z-index: 10;
+    }
+
+    .btn-scroll-top {
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+        position: fixed;
+        right: 16px;
+        bottom: 114px;
+        padding: 10px;
+
+        span + span {
+            font-size: 1rem;
+        }
+    }
+}
+
+.comment-turned-off {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-bottom {
+    padding: 21px 30px;
+    border-top: 1px solid rgba(22, 24, 35, 0.2);
+}
+
+

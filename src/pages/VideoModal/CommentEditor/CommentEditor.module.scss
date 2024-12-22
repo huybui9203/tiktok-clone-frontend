@@ -1,0 +1,179 @@
+.comment-box {
+    min-height: 43px;
+}
+.comment-box,
+.comment-input {
+    display: flex;
+    align-items: end;
+}
+
+.editor-wrapper,
+.comment-input {
+    flex: 1;
+}
+
+.comment-input {
+    flex-wrap: wrap;
+    background-color: rgba(22, 24, 35, 0.06);
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+    word-break: break-word;
+}
+
+.draft-editor {
+    // min-height: 17px;
+    // min-height: 40px;
+    font-size: 1.4rem;
+    font-family: var(--font-family);
+    padding: 12px 8px;
+    border-radius: 8px;
+    caret-color: var(--primary);
+    line-height: 1.7rem;
+    * {
+        margin: 0;
+    }
+}
+
+.count-characters {
+    display: block;
+    color: rgb(22, 24, 35);
+    font-size: 1.4rem;
+    padding-left: 8px;
+    margin-bottom: 12px;
+}
+
+.btn-mention,
+.btn-emoji {
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cmt-icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 2.2rem;
+    padding: 5px;
+    line-height: 2.2rem;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+    }
+}
+
+.btn-close {
+    font-size: 1.8rem;
+    line-height: 4rem;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.btn-send {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-right: 4px;
+    text-align: right;
+    flex: 0 0 48px;
+    line-height: 4.1rem;
+    padding-left: 12px;
+    cursor: pointer;
+    user-select: none;
+
+    &.disabled {
+        cursor: default;
+    }
+}
+
+//emoji
+.emoji-wrapper {
+    width: 368px;
+    height: 300px;
+    margin-top: -8px;
+}
+
+.list-emoji {
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overscroll-behavior-y: contain;
+}
+
+.emoji-item {
+    font-size: 2.4rem;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px 6px;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    user-select: none;
+    line-height: 4rem;
+    text-align: center;
+    list-style-type: none;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+// comment mention
+.list-mentions {
+    width: 280px;
+    height: 256px;
+    margin-top: -8px;
+    border-radius: 8px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    overscroll-behavior-y: contain;
+    position: relative;
+
+    &.hidden {
+        display: none;
+    }
+
+    .mention-item-wrapper:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    .mention-item {
+        display: flex;
+        margin: 0 16px;
+        padding: 4px 0;
+        border-bottom: 1px solid rgba(22, 24, 35, 0.1);
+        cursor: pointer;
+    }
+
+    .body {
+        margin-left: 8px;
+    }
+
+    .nickname {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .name {
+        font-size: 1.2rem;
+    }
+
+    .check-icon {
+        margin-left: 4px;
+    }
+
+    .load-more {
+        margin: 0 16px;
+    }
+
+    .label-searching {
+        color: rgba(22, 24, 35, 0.5);
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

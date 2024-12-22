@@ -1,0 +1,24 @@
+.btn {
+    height: 44px;
+    min-width: 116px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    color: var(--text-color);
+    flex-shrink: 0;
+    margin-left: -1px;
+    background-color: rgba(22, 24, 35, 0.06);
+
+    &.disabled {
+        color: rgba(22, 24, 35, 0.4);
+    }
+
+    & > :first-child {
+        display: flex;
+        align-items: center;
+    }
+
+    .loading,
+    .countdown {
+        margin-left: 6px;
+        font-feature-settings: "tnum";
+    }
+}

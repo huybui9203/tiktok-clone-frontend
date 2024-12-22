@@ -1,0 +1,64 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+
+    .backdrop {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+    }
+}
+
+.div-content {
+    position: absolute;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: 300px;
+    max-height: 100vh;
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 8px;
+    animation: var(--zoom-in) 0.2s ease-out;
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+.btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 1.8rem;
+}
+
+.wrapper.autoHeight {
+    .content-wrapper {
+        align-items: start;
+    }
+    .div-content {
+        padding: 32px 16px;
+        max-height: unset;
+    }
+
+    .btn-close {
+        top: 56px;
+        right: 40px;
+    }
+}

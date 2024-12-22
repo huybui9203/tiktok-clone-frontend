@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+
+    .avatar,
+    .body {
+        margin: 16px 0;
+    }
+
+    .avatar {
+        flex-shrink: 0;
+    }
+
+    .body {
+        margin-left: 16px;
+    }
+
+    .nickname {
+        font-size: 1.8rem;
+        font-weight: 600;
+        display: flex;
+        align-items: baseline;
+
+        .icon-check {
+            margin-left: 4px;
+        }
+    }
+
+    .user-name,
+    .count-follows,
+    .user-bio {
+        font-size: 1.4rem;
+    }
+
+    .user-name {
+        color: rgba(22, 24, 35, 0.75);
+        font-weight: 400;
+    }
+
+    .count-follows {
+        color: var(--text-color);
+        font-weight: 600;
+        margin: 0 4px;
+    }
+}

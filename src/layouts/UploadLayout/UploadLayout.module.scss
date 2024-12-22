@@ -1,0 +1,13 @@
+.container {
+    margin-top: var(--default-layout-header-height);
+
+    display: flex;
+    .sidebar {
+        width: 240px;
+        border-right: 1px solid rgba(22, 24, 35, 0.12);
+    }
+
+    .content {
+        flex: 1 0 1080px;
+    }
+}
